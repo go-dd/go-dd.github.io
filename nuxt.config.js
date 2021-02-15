@@ -2,9 +2,20 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
+  nuxt: 'is the best',
+
   target: 'static',
   server: {
     port: 8000,
+  },
+
+  content: {
+    nestedProperties: ['author.name'],
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css',
+      },
+    },
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -42,6 +53,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxt/content',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -51,18 +63,18 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
+      // dark: true,
+      // themes: {
+      //   dark: {
+      //     primary: colors.blue.darken2,
+      //     accent: colors.grey.darken3,
+      //     secondary: colors.amber.darken3,
+      //     info: colors.teal.lighten1,
+      //     warning: colors.amber.base,
+      //     error: colors.deepOrange.accent4,
+      //     success: colors.green.accent3,
+      //   },
+      // },
     },
   },
 
